@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void Aufgabe_1(){
 	//Warum? :(
@@ -29,7 +30,15 @@ void Aufgabe_3(){
 }
 
 void Aufgabe_4(){
+	/*int x = 24060;
+	int stunden = 0;
+	int minuten = 0;
+	int sekunden = 0;
 
+	stunden = x / 3600;
+//	printf("Bodisco steht um %i:%i:%i auf", stunden, minuten, sekunden);
+	printf("%i\n", x);
+*/
 }
 
 void Aufgabe_5(){
@@ -70,6 +79,38 @@ void Aufgabe_8(unsigned int b, char c){
 }
 
 int main(){
-	Aufgabe_7(9, 6, 'X');
+	int aufgabe = 0, n = 0;
+	printf("bitte geben sie die Nummer der gewünschten aufgaben an ");
+	scanf("%i", &aufgabe);
+
+	switch (aufgabe) {
+		case 1:
+			Aufgabe_1();
+			break;
+		case 2:
+			printf("bitte geben sie eine Zahl an");
+			scanf("%i", &n);
+			Aufgabe_2(n);
+			break;
+		case 3: 
+			Aufgabe_3();
+			break;
+		case 4:
+			Aufgabe_4();
+			break;
+		case 5: 
+			Aufgabe_5();
+			break;
+		case 6:
+			Aufgabe_6();
+			break;
+		case 7:
+			Aufgabe_7(7, 9, 'X');
+			break;
+		default:
+			Aufgabe_1();
+			break;
+			
+	}
 	return 0;
 }
