@@ -30,18 +30,24 @@ void Aufgabe_3() {
 }
 
 void Aufgabe_4() {
-  /*int x = 24060;
+  int x = 24060;
   int stunden = 0;
   int minuten = 0;
   int sekunden = 0;
 
   stunden = x / 3600;
-//	printf("Bodisco steht um %i:%i:%i auf", stunden, minuten, sekunden);
-  printf("%i\n", x);
-*/
+  minuten = x / 60 - stunden * 60;
+  sekunden = x - stunden * 3600 - minuten * 60; 
+
+	printf("Bodisco steht um %i:%i:%i auf", stunden, minuten, sekunden);
+	//printf("Bodisco steht um %i:%i:%i auf",x / 3600,x / 60 - x / 3600 * 60, );
+	
+
 }
 
-void Aufgabe_5() {}
+void Aufgabe_5(int value) {
+	printf("%04i\n",value);
+}
 
 void Aufgabe_6(int n) {
   int r, sum, temp = 0;
