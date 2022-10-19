@@ -66,6 +66,7 @@ void Aufgabe_6(int n)
         r = n % 10;
         sum = (sum * 10) + r;
         n = n / 10;
+    }
 
         if (temp == sum)
         {
@@ -75,7 +76,7 @@ void Aufgabe_6(int n)
         {
             printf("%i ist kein Zahlenpalindrom\n", n);
         }
-    }
+    
 }
 
 void Aufgabe_7(unsigned int breite, unsigned int hoehe, char c)
