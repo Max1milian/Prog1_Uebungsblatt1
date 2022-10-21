@@ -3,7 +3,6 @@
 
 void Aufgabe_1()
 {
-    // Warum? :(
     printf("   (\"`-\'\'-/\").___..--''\"`-._\n");
     printf("    `6_ 6 ) `-. ( ).`-.__.`)\n");
     printf("   (_Y_.)' ._ ) `._ `. ``-..-'\n");
@@ -70,29 +69,32 @@ void Aufgabe_6(int n)
 
         if (temp == sum)
         {
-            printf("%i ist ein Zahlenpalindrom\n", n);
+            printf("Zahlenpalindrom\n");
         }
         else
         {
-            printf("%i ist kein Zahlenpalindrom\n", n);
+            printf("kein Zahlenpalindrom\n");
         }
     
 }
 
-void Aufgabe_7(unsigned int breite, unsigned int hoehe, char c)
+void Aufgabe_7(unsigned int width, unsigned int height, char c)
 {
-    for (unsigned int i = 0; i < breite; ++i)
+	//Kopf
+    for (unsigned int i = 0; i < width; ++i)
     {
         printf("%c", c);
     }
     printf("\n");
-    for (unsigned int i = 0; i < hoehe; ++i)
+    	//Torso
+    for (unsigned int i = 0; i < height; ++i)
     {
         printf("%c", c);
-        printf("%*c \n", breite - 1,
+        printf("%*c \n", width - 1,
                c); // -1 weil die linke seite sonst zu weit außen steht
     }
-    for (unsigned int i = 0; i < breite; ++i)
+    	//Boden
+    for (unsigned int i = 0; i < width; ++i)
     {
         printf("%c", c);
     }
@@ -100,28 +102,48 @@ void Aufgabe_7(unsigned int breite, unsigned int hoehe, char c)
 
 void Aufgabe_8(unsigned int b, char c)
 {
-    if (b % 2 == 0)
-    {
-        for (unsigned int i = 0; i < b; ++i)
-        {
-            printf("%c", c);
-        }
-        printf("\n");
-    }
-
-    else
-    {
-    }
+	int const width = b;
+	int const height = b;
+	
+	for (int y = 0; y < height; y++) {
+		for (int x = 0; x < width; x++) {
+			if (y == 0 || y == height-1) {
+				// Erste oder letze Zeile, daher c mit voller Breite drucken
+				printf("%c",c);
+			} else  {
+				// Zeilen dazwischen
+				if (x == y || x == height-y-1) {
+					printf("%c",c);
+				} else {
+					// Bei Gerade oben gefuellt, bei ungerade unten gefuellt
+					if (width%2==0) {
+						// Bei gerader Breite oben ausfuellen
+						if (x > y && x < height-y-1) {
+							// Nur innerhalb der Sanduhr
+							printf("%c",c);
+						} else {
+							// Ausserhalb der Sanduhr
+							printf(" ");
+						}
+					} else {
+						// Bei ungerader Breite unten ausfuellen
+						if (x < y && x > height-y-1) {
+							// Nur innerhalb der Sanduhr
+							printf("%c",c);
+						} else {
+							// Ausserhalb der Sanduhr
+							printf(" ");
+						}
+					}
+				}
+			}
+		}
+		printf("\n");
+	}
 }
 
 int main()
 {
-    Aufgabe_1();
-    Aufgabe_3();
-    Aufgabe_4();
-    Aufgabe_5();
-    Aufgabe_6(1337);
-    Aufgabe_7(7, 9, 'X');
-    Aufgabe_1();
+   Aufgabe_8(8,'x');
     return 0;
 }
