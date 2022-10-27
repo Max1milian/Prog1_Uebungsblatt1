@@ -58,13 +58,16 @@ void Aufgabe_5()
 
 void Aufgabe_6(int n)
 {
-    int r, sum, temp = 0;
+    int r, sum = 0, temp = 0;
     temp = n;
     while (n > 0)
     {
         r = n % 10;
+	printf("r: %i\n",r);
         sum = (sum * 10) + r;
+	printf("sum: %i\n",sum);
         n = n / 10;
+	printf("n: %i\n", n);
     }
 
         if (temp == sum)
@@ -116,9 +119,9 @@ void Aufgabe_8(unsigned int b, char c)
 					printf("%c",c);
 				} else {
 					// Bei Gerade oben gefuellt, bei ungerade unten gefuellt
-					if (width%2==0) {
+					if (width%2==0) { 
 						// Bei gerader Breite oben ausfuellen
-						if (x > y && x < height-y-1) {
+						if (x > y/*<-- linke treppe*/ && x < height-y-1/*<-- rechte treppe*/) {
 							// Nur innerhalb der Sanduhr
 							printf("%c",c);
 						} else {
@@ -144,6 +147,6 @@ void Aufgabe_8(unsigned int b, char c)
 
 int main()
 {
-   Aufgabe_8(8,'x');
+	Aufgabe_5();
     return 0;
 }
